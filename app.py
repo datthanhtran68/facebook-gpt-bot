@@ -11,6 +11,23 @@ OPENAI_API_KEY = 'sk-...YOUR_OPENAI_KEY...'  # <-- bạn thay bằng OpenAI key
 
 openai.api_key = OPENAI_API_KEY
 
+@app.route("/privacy")
+def privacy_policy():
+    return """
+    <html>
+      <head>
+        <title>Chính sách quyền riêng tư</title>
+      </head>
+      <body>
+        <h1>Chính sách quyền riêng tư</h1>
+        <p>Ứng dụng chatbot Messenger này không lưu trữ, thu thập hoặc chia sẻ bất kỳ dữ liệu cá nhân nào của người dùng. 
+        Tin nhắn chỉ được xử lý để phản hồi tự động trên Messenger.</p>
+        <p>Chúng tôi cam kết bảo vệ quyền riêng tư của người dùng. 
+        Mọi dữ liệu đều được xử lý tạm thời và không lưu trữ lâu dài.</p>
+        <p>Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ: <strong>zsieugaz@gmail.com.com</strong></p>
+      </body>
+    </html>
+    """
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
     if request.method == 'GET':
