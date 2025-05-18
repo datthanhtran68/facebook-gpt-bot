@@ -1,11 +1,12 @@
 from flask import Flask, request
 import requests
 import openai
+import os
 
 app = Flask(__name__)
 
 VERIFY_TOKEN = 'badboy2025'  # <-- bạn có thể đổi
-PAGE_ACCESS_TOKEN = 'EAAB...YOUR_PAGE_TOKEN...'  # <-- bạn thay bằng token của Fanpage
+PAGE_ACCESS_TOKEN = os.environ.get('PAGE_ACCESS_TOKEN')  # <-- bạn thay bằng token của Fanpage
 OPENAI_API_KEY = 'sk-...YOUR_OPENAI_KEY...'  # <-- bạn thay bằng OpenAI key
 
 openai.api_key = OPENAI_API_KEY
